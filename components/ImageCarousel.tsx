@@ -95,8 +95,8 @@ export default function ImageCarousel({
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
             
             {/* Text Overlay - Lower Left Quadrant */}
-            <div className="absolute bottom-8 md:bottom-12 left-6 md:left-12 lg:left-16 max-w-xl md:max-w-2xl">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-3 md:mb-4 uppercase tracking-tight leading-tight">
+            <div className="absolute bottom-8 md:bottom-12 left-6 md:left-40 lg:left-40 max-w-xl md:max-w-2xl">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-3 md:mb-4 uppercase tracking-tight leading-tight whitespace-nowrap">
                 {slide.title}
               </h2>
               <div className="flex items-center gap-3 md:gap-4 flex-wrap">
@@ -106,20 +106,18 @@ export default function ImageCarousel({
                 {/* Red Arrow - Inline with subtitle */}
                 <button
                   onClick={goToNext}
-                  className="text-red-500 hover:text-red-400 transition-colors flex-shrink-0"
+                  className="shrink-0 hover:opacity-80 transition-opacity"
                   aria-label="Next slide"
                 >
                   <svg
-                    className="w-6 h-6 md:w-8 md:h-8"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="w-[30px] h-[30px] md:w-[45px] md:h-[45px]"
+                    viewBox="0 0 45 45"
                     fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
                   >
                     <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2.5}
-                      d="M9 5l7 7-7 7"
+                      d="M22.5 37.5L19.8281 34.875L30.3281 24.375H7.5V20.625H30.3281L19.8281 10.125L22.5 7.5L37.5 22.5L22.5 37.5Z"
+                      fill="#F33838"
                     />
                   </svg>
                 </button>
@@ -128,47 +126,6 @@ export default function ImageCarousel({
           </div>
         ))}
       </div>
-
-      {/* Navigation Arrows - Hidden on mobile, shown on larger screens */}
-      <button
-        onClick={goToPrevious}
-        className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white p-2 md:p-3 rounded-full transition-all z-10"
-        aria-label="Previous slide"
-      >
-        <svg
-          className="w-5 h-5 md:w-6 md:h-6"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M15 19l-7-7 7-7"
-          />
-        </svg>
-      </button>
-
-      <button
-        onClick={goToNext}
-        className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white p-2 md:p-3 rounded-full transition-all z-10"
-        aria-label="Next slide"
-      >
-        <svg
-          className="w-5 h-5 md:w-6 md:h-6"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M9 5l7 7-7 7"
-          />
-        </svg>
-      </button>
 
       {/* Pagination Dots - Centered */}
       <div className="absolute bottom-4 md:bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-10">
