@@ -6,10 +6,10 @@ import { navigationItems, categories } from '@/lib/data';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [hoveredItem, setHoveredItem] = useState<string | null>(null);
 
   return (
-    <header className="sticky top-0 z-50 bg-gray-900">
+    <header className="relative z-50 bg-gray-900">
       <div className="w-full">
         {/* Top bar with logo and icons */}
         <div className="flex items-center justify-between px-6 py-4 border-b border-gray-800">
@@ -110,37 +110,30 @@ export default function Header() {
         </div>
 
         {/* Navigation Bar */}
-        <nav className="hidden md:flex items-center justify-center gap-8 px-6 py-4 relative">
+        <nav 
+          className="hidden md:flex items-center justify-center gap-8 px-6 py-4 relative"
+          onMouseLeave={() => setHoveredItem(null)}
+        >
           {navigationItems.map((item) => (
             <a
               key={item}
               href="#"
-              className={`text-sm font-medium uppercase tracking-wide transition-colors ${
-                item === 'EXTREME'
-                  ? 'text-white bg-red-500 px-3 py-1'
-                  : 'text-white hover:text-gray-300'
+              className={`text-sm font-medium uppercase tracking-wide transition-colors px-3 py-1 rounded ${
+                hoveredItem === item
+                  ? 'text-white bg-red-500'
+                  : 'text-white hover:bg-red-500'
               }`}
-              onMouseEnter={() => {
-                if (item === 'CAMERAS') {
-                  setIsDropdownOpen(true);
-                }
-              }}
-              onMouseLeave={() => {
-                if (item === 'CAMERAS') {
-                  setIsDropdownOpen(false);
-                }
-              }}
+              onMouseEnter={() => setHoveredItem(item)}
             >
               {item}
             </a>
           ))}
 
-          {/* Dropdown Menu */}
-          {isDropdownOpen && (
+          {/* Dropdown Menu - Shows for any hovered item */}
+          {hoveredItem && (
             <div
               className="absolute top-full left-0 w-full bg-stone-50 border-t border-gray-200 shadow-lg z-50"
-              onMouseEnter={() => setIsDropdownOpen(true)}
-              onMouseLeave={() => setIsDropdownOpen(false)}
+              onMouseEnter={() => setHoveredItem(hoveredItem)}
             >
               <div className="container mx-auto px-6 py-8">
                 <div className="grid grid-cols-3 gap-12 max-w-6xl mx-auto">

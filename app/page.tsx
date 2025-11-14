@@ -1,6 +1,5 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import Hero from '@/components/Hero';
 import FeaturedSection from '@/components/FeaturedSection';
 import TopSellers from '@/components/TopSellers';
 import ProductCard from '@/components/ProductCard';
@@ -15,9 +14,6 @@ export default function Home() {
       <Header />
       
       <main className="flex-grow">
-        {/* Hero Section with Categories */}
-        <Hero />
-
         {/* Image Carousel */}
         <ImageCarousel slides={carouselSlides} autoPlay={true} autoPlayInterval={5000} />
 
