@@ -22,7 +22,7 @@ export default function Home() {
 
         {/* Help Section */}
         <HelpSection
-          mainImage="/pixel/13.webp"
+          mainImage="/pixel/1.webp"
           guideCards={guideCards}
         />
 

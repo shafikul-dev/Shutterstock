@@ -8,106 +8,95 @@ interface HelpSectionProps {
 
 export default function HelpSection({ mainImage, guideCards }: HelpSectionProps) {
   return (
-    <section className="py-16 bg-gray-50">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-          {/* Left Section - Main Image */}
-          <div className="relative h-[400px] md:h-[500px] lg:h-[600px] rounded-lg overflow-hidden">
-            <Image
-              src={mainImage}
-              alt="Photography guide"
-              fill
-              className="object-cover"
-            />
+    <div className="container mx-auto px-5" id="cta">
+      <div className="my-[73px]">
+        <div className="flex gap-[15px]">
+        {/* Left Section - Main Image */}
+        <div className="w-1/2 hidden lg:flex">
+          <Image
+            src={mainImage}
+            alt=""
+            width={500}
+            height={500}
+            className="w-[792px] h-[470px] object-cover"
+            loading="lazy"
+          />
+        </div>
+
+        {/* Right Section - Content */}
+        <div className="lg:w-1/2 content">
+          <div>
+            <h3 className="font-extralightbold text-5xl">New to photography? Let us help!</h3>
+            <p className='pt-2 line-clamp-3 overflow-hidden text-ellipsis'>We offer a variety of written & recorded guides for all aspects of photography, ranging from equipment handling to artistic theory.</p>
+            
+            {/* Search Input */}
+            <div className="relative my-3">
+              <svg
+                stroke="currentColor"
+                fill="currentColor"
+                strokeWidth="0"
+                viewBox="0 0 24 24"
+                className="absolute text-[var(--brand-color)] top-[13px] text-lg left-4"
+                height="1em"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M10 18a7.952 7.952 0 0 0 4.897-1.688l4.396 4.396 1.414-1.414-4.396-4.396A7.952 7.952 0 0 0 18 10c0-4.411-3.589-8-8-8s-8 3.589-8 8 3.589 8 8 8zm0-14c3.309 0 6 2.691 6 6s-2.691 6-6 6-6-2.691-6-6 2.691-6 6-6z"></path>
+              </svg>
+              <input
+                type="text"
+                className="bg-white hover:bg-gray-200 h-[42px] w-full md:w-[270px] px-12 rounded-lg focus:outline-none hover:cursor-pointer"
+                placeholder="Search Guide"
+                name=""
+              />
+            </div>
           </div>
 
-          {/* Right Section - Content */}
-          <div className="flex flex-col">
-            {/* Top Content */}
-            <div className="mb-8">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                New to photography? Let us help!
-              </h2>
-              <p className="text-gray-600 mb-6 text-lg">
-                We offer a variety of written & recorded guides for all aspects of photography,
-                ranging from equipment handling to artistic theory.
-              </p>
-              
-              {/* Search Guide */}
-              <div className="flex items-center gap-2 text-gray-400 hover:text-gray-600 transition-colors cursor-pointer">
-                <svg
-                  className="w-5 h-5 text-red-500"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+          {/* Guide Cards */}
+          <div className="details">
+            {guideCards.map((card, index) => (
+              <div key={card.id} className={`details flex gap-4 ${index > 0 ? 'mt-[14px]' : ''}`}>
+                <div>
+                  <Image
+                    src={card.image}
+                    alt=""
+                    width={800}
+                    height={500}
+                    className="w-full md:w-[269px] h-[147px] object-cover"
+                    loading="lazy"
                   />
-                </svg>
-                <span className="text-sm font-medium">Search Guide</span>
-              </div>
-            </div>
-
-            {/* Guide Cards */}
-            <div className="space-y-6 flex-1">
-              {guideCards.map((card) => (
-                <div
-                  key={card.id}
-                  className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow"
-                >
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    {/* Card Image */}
-                    <div className="relative h-[200px] md:h-full md:min-h-[150px]">
-                      <Image
-                        src={card.image}
-                        alt={card.title}
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-
-                    {/* Card Content */}
-                    <div className="md:col-span-2 p-6 flex flex-col justify-between">
-                      <div>
-                        <h3 className="text-xl font-bold text-gray-900 mb-2">
-                          {card.title}
-                        </h3>
-                        <p className="text-gray-600 mb-4">
-                          {card.description}
-                        </p>
-                      </div>
-                      <a
-                        href={card.link || '#'}
-                        className="text-red-500 hover:text-red-600 font-medium inline-flex items-center gap-1 group"
+                </div>
+                <div className="flex flex-col justify-around">
+                  <div>
+                    <h2>{card.title}</h2>
+                    <p>{card.description}</p>
+                  </div>
+                  <div className="flex items-center link gap-5">
+                    <a className="underline text-[#737373] hover:text-[var(--brand-color)]" href={card.link || '/'}>
+                      Read More
+                    </a>
+                    <div className="icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 45 45"
+                        fill="none"
                       >
-                        <span className="underline">Read More</span>
-                        <svg
-                          className="w-4 h-4 group-hover:translate-x-1 transition-transform"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M9 5l7 7-7 7"
-                          />
-                        </svg>
-                      </a>
+                        <path
+                          d="M22.5 37.5L19.8281 34.875L30.3281 24.375H7.5V20.625H30.3281L19.8281 10.125L22.5 7.5L37.5 22.5L22.5 37.5Z"
+                          fill="#F33838"
+                        />
+                      </svg>
                     </div>
                   </div>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
-    </section>
+    </div>
+    </div>
   );
 }
-
