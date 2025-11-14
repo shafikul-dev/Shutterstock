@@ -9,7 +9,7 @@ export default function Header() {
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
 
   return (
-    <header className="relative z-50 bg-[#1a1a1b]">
+    <header className="relative z-50 bg-[#1a1a1b] h-auto">
       <div className="w-full">
         {/* Top bar with logo and icons */}
         <div className="flex items-center justify-between px-6 py-4 border-b border-gray-800">
@@ -25,11 +25,11 @@ export default function Header() {
           </div>
 
           {/* Icons on the right */}
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-[31px]">
             {/* User/Login Icon */}
             <button className="text-red-500 hover:text-red-400 transition-colors" aria-label="Login">
               <svg
-                className="w-6 h-6"
+                className="w-[24px] h-[24px] md:w-[30px] md:h-[30px]"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -46,7 +46,7 @@ export default function Header() {
             {/* Shopping Cart Icon */}
             <button className="text-red-500 hover:text-red-400 transition-colors" aria-label="Shopping Cart">
               <svg
-                className="w-6 h-6"
+                className="w-[24px] h-[24px] md:w-[30px] md:h-[30px]"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -61,9 +61,9 @@ export default function Header() {
             </button>
 
             {/* Search Icon */}
-            <button className="text-red-500 hover:text-red-400 transition-colors" aria-label="Search">
+            <button className="text-red-500 hover:text-red-400 transition-colors hidden lg:flex" aria-label="Search">
               <svg
-                className="w-6 h-6"
+                className="w-[24px] h-[24px] md:w-[30px] md:h-[30px]"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -84,7 +84,7 @@ export default function Header() {
               aria-label="Toggle menu"
             >
               <svg
-                className="w-6 h-6"
+                className="w-[24px] h-[24px] md:w-[30px] md:h-[30px]"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"

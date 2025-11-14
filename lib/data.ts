@@ -148,19 +148,19 @@ export const promotionalBanners: PromotionalBanner[] = [
 export const carouselSlides: CarouselSlide[] = [
   {
     id: '1',
-    image: '/pixel/camera.webp',
+    image: '/pixel/carusel2.webp',
     title: 'MAKE BELIEVE',
     subtitle: 'Sales on selected SONY products',
   },
   {
     id: '2',
-    image: '/pixel/camera%202.webp',
+    image: '/pixel/carusel3.webp',
     title: 'PICTURE PERFECT DEALS',
     subtitle: 'Browse our second-hand gear market',
   },
   {
     id: '3',
-    image: '/pixel/7.webp',
+    image: '/pixel/carusel1.webp',
     title: 'NEW ARRIVALS',
     subtitle: 'The newest and latest advances in technology',
   },
