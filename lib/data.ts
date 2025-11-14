@@ -171,19 +171,19 @@ export const categoryCards: CategoryCard[] = [
     id: '1',
     title: 'Cameras',
     description: 'Browse through our selection of cameras',
-    image: '/pixel/8.webp',
+    image: '/pixel/camera.webp',
   },
   {
     id: '2',
     title: 'Lenses',
     description: 'Find the sharpest lens for your photoshoot',
-    image: '/pixel/9.webp',
+    image: '/pixel/camera2.webp',
   },
   {
     id: '3',
     title: 'Accessories',
     description: 'Highest quality accessories to fit your gear',
-    image: '/pixel/10.webp',
+    image: '/pixel/3.webp',
   },
 ];
 
