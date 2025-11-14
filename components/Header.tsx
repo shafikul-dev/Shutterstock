@@ -9,7 +9,7 @@ export default function Header() {
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
 
   return (
-    <header className="relative z-50 bg-gray-900">
+    <header className="relative z-50 bg-[#1a1a1b]">
       <div className="w-full">
         {/* Top bar with logo and icons */}
         <div className="flex items-center justify-between px-6 py-4 border-b border-gray-800">
