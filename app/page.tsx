@@ -27,9 +27,9 @@ export default function Home() {
         /> */}
 
         {/* Products Grid */}
-        <section className="py-12 bg-[#fcf6f6] w-full relative z-10">
+        <section className="py-12 bg-[#fcf6f6] w-full relative">
           <div className="w-full mx-auto px-4">
-            <div className="flex justify-center gap-[38px] items-start min-w-fit">
+            <div className="flex flex-wrap justify-center gap-[38px] items-start">
               {products.map((product) => (
                 <ProductCard key={product.id} product={product} />
               ))}

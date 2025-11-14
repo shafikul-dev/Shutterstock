@@ -13,7 +13,7 @@ export default function ProductCard({ product }: ProductCardProps) {
   const [quantity, setQuantity] = useState(product.quantity || 1);
 
   return (
-    <div className="group cursor-pointer bg-white w-[256px] h-[434px] flex flex-col">
+    <div className="group relative flex flex-col w-[256px] min-h-[434px] overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition-shadow hover:shadow-md">
       {/* Top Icons */}
       <div className="flex items-center justify-end gap-3 mb-2">
         <button className="text-gray-600 hover:text-gray-900 transition-colors">
@@ -29,7 +29,7 @@ export default function ProductCard({ product }: ProductCardProps) {
       </div>
 
       {/* Product Image */}
-      <div className="relative mb-4 w-[253px] h-[253px] overflow-hidden bg-gray-100 flex-shrink-0 mx-auto">
+      <div className="relative mb-4 w-[256px] h-[256px] overflow-hidden bg-gray-100 shrink-0 mx-auto">
         {product.image ? (
           <Image
             src={product.image}
@@ -45,12 +45,13 @@ export default function ProductCard({ product }: ProductCardProps) {
       </div>
       
       {/* Product Details */}
-      <div className="space-y-3 flex-grow flex flex-col">
+      <div className="space-y-3 grow flex flex-col px-2 pb-4">
         {/* Product Name */}
         <h3 className="text-2xl font-bold text-gray-900">{product.name}</h3>
         
-        {/* Brand */}
-        <p className="text-base text-gray-900">{product.brand}</p>
+      <div className='flex justify-between'>
+          {/* Brand */}
+          <p className="text-base text-gray-900">{product.brand}</p>
         
         {/* Rating */}
         <div className="flex items-center gap-1">
@@ -59,6 +60,7 @@ export default function ProductCard({ product }: ProductCardProps) {
           </svg>
           <span className="text-base text-gray-900 font-medium">{product.rating}</span>
         </div>
+      </div>
 
         {/* Options (for 2 Lens kit) */}
         {product.options && product.options.length > 0 && (
@@ -114,7 +116,11 @@ export default function ProductCard({ product }: ProductCardProps) {
           </ul>
         )}
 
-        {/* Timer */}
+
+
+
+        {/* Timer + Price in one row */}
+        <div className=" flex items-end justify-between mt-[-30px] ">
         {product.countdown && (
           <div className="flex items-center gap-2">
             <svg className="w-5 h-5 text-[#F33838]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -123,9 +129,10 @@ export default function ProductCard({ product }: ProductCardProps) {
             <span className="text-base text-gray-900">{product.countdown}</span>
           </div>
         )}
+     
 
         {/* Price */}
-        <div className="pt-2">
+        <div className="pt-2 text-right">
           {product.originalPrice && (
             <div className="text-lg text-gray-500 line-through mb-1">
               $ {product.originalPrice.toLocaleString()}
@@ -135,6 +142,12 @@ export default function ProductCard({ product }: ProductCardProps) {
             $ {product.price.toLocaleString()}
           </div>
         </div>
+        </div>
+
+      
+
+
+
       </div>
     </div>
   );
