@@ -21,27 +21,21 @@ export default function Home() {
         <CategoryCards cards={categoryCards} />
 
         {/* Help Section */}
-        <HelpSection
+        {/* <HelpSection
           mainImage="/pixel/1.webp"
           guideCards={guideCards}
-        />
+        /> */}
 
         {/* Products Grid */}
-        <section className="py-12 bg-white">
-          <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <section className="py-12 bg-[#fcf6f6] w-full relative z-10">
+          <div className="w-full mx-auto px-4">
+            <div className="flex justify-center gap-[38px] items-start min-w-fit">
               {products.map((product) => (
                 <ProductCard key={product.id} product={product} />
               ))}
             </div>
           </div>
         </section>
-
-        {/* Used Gear Section */}
-      
-        {/* Top Sellers */}
-
-
       </main>
 
       <Footer />

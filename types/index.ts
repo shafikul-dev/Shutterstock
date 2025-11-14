@@ -9,6 +9,9 @@ export interface Product {
   countdown?: string;
   features?: string[];
   category: string;
+  options?: string[];
+  selectedOption?: string;
+  quantity?: number;
 }
 
 export interface Seller {
