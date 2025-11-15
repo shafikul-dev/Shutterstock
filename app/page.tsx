@@ -6,7 +6,8 @@ import ProductCard from '@/components/ProductCard';
 import ImageCarousel from '@/components/ImageCarousel';
 import CategoryCards from '@/components/CategoryCards';
 import HelpSection from '@/components/HelpSection';
-import { products, promotionalBanners, carouselSlides, categoryCards, guideCards } from '@/lib/data';
+import UsedGearSection from '@/components/UsedGearSection';
+import { products, promotionalBanners, carouselSlides, categoryCards, guideCards, sellers } from '@/lib/data';
 
 export default function Home() {
   return (
@@ -36,6 +37,9 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        {/* Featured savings / Used Gear Section */}
+        <UsedGearSection sellers={sellers} />
       </main>
 
       <Footer />

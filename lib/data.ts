@@ -92,6 +92,7 @@ export const sellers: Seller[] = [
     description: 'PIXEL Verified',
     specialties: ['Camera Bags', 'Grips & Rigs', 'Professional Straps'],
     verified: true,
+    image: '/pixel/11.webp',
   },
   {
     id: '2',
@@ -105,6 +106,7 @@ export const sellers: Seller[] = [
       'Lens Accessories',
     ],
     verified: true,
+    image: '/pixel/12.webp',
   },
   {
     id: '3',
@@ -113,6 +115,7 @@ export const sellers: Seller[] = [
     description: 'PIXEL Verified',
     specialties: ['60s & 70s Film Cameras', 'Old Prints', 'Disposables'],
     verified: true,
+    image: '/pixel/10.webp',
   },
 ];
 
