@@ -9,14 +9,14 @@ export default function UsedGearSection({ sellers }: UsedGearSectionProps) {
   const topSellers = sellers.slice(0, 3);
 
   return (
-    <section className="bg-white">
+    <section className="bg-white mx-auto">
       <div className=" mx-auto px-4 py-12 lg:py-16 h-full">
         {/* Heading */}
         <h2 className="text-[32px] md:text-[40px] font-bold tracking-tight mb-6">
           Featured savings
         </h2>
 
-        <div className="grid gap-10 items-start lg:grid-cols-[30%_60%]">
+        <div className="grid gap-10 items-start lg:grid-cols-[35%_60%]">
           {/* Left image */}
           <div className="relative w-full  h-full aspect-[4/3]">
             <Image

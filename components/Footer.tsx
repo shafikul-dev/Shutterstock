@@ -53,7 +53,7 @@ export default function Footer() {
 
           {/* Right: Newsletter */}
           <div>
-            <h3 className="text-lg font-normal mb-4">
+            <h3 className="text-xl font-normal mb-4">
               Join our newsletter for exclusive offers!
             </h3>
             <form
@@ -115,7 +115,7 @@ export default function Footer() {
 
         {/* Middle Section: Shop, Used, About, Contact Info */}
         <div className="border-t border-gray-700 pt-8 mb-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-[1fr_1fr_1fr_2fr] gap-8 lg:gap-16">
+          <div className="flex flex-wrap lg:flex-nowrap justify-between items-start gap-8 lg:gap-12">
             {/* Shop Links */}
             <div>
               <h3 className="text-base font-bold mb-4">Shop</h3>
@@ -128,11 +128,6 @@ export default function Footer() {
                 <li>
                   <a href="#" className="hover:text-white transition-colors">
                     Cameras
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    Lenses
                   </a>
                 </li>
                 <li>
@@ -193,7 +188,7 @@ export default function Footer() {
             </div>
 
             {/* Contact Information */}
-            <div className="col-span-2 md:col-span-1">
+            <div className="shrink-0">
               <h3 className="text-base font-bold mb-4">Contact Information</h3>
               <div className="space-y-3 text-sm">
                 <div className="flex items-center gap-2 text-[#ff0055]">
@@ -223,10 +218,10 @@ export default function Footer() {
         </div>
 
         {/* Bottom Section: Copyright, Payment Icons, Links */}
-        <div className="border-t border-gray-700 pt-6">
+        <div className=" pt-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <p className="text-gray-400 text-sm">
-              © 2023 PIXEL. All Rights Reserved
+            <p className="text-gray-400 text-[16px]">
+              © 2025 PIXEL. All Rights Reserved
             </p>
             
             {/* Payment Icons */}
@@ -265,6 +260,7 @@ export default function Footer() {
                 Privacy Policy
               </a>
             </div>
+
           </div>
         </div>
       </div>
