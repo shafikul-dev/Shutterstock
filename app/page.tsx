@@ -4,7 +4,8 @@ import ProductCard from '@/components/ProductCard';
 import ImageCarousel from '@/components/ImageCarousel';
 import CategoryCards from '@/components/CategoryCards';
 import UsedGearSection from '@/components/UsedGearSection';
-import { products, carouselSlides, categoryCards, sellers } from '@/lib/data';
+import { products, carouselSlides, categoryCards, sellers, guideCards } from '@/lib/data';
+import HelpSection from '@/components/HelpSection';
 
 export default function Home() {
   return (
@@ -19,10 +20,10 @@ export default function Home() {
         <CategoryCards cards={categoryCards} />
 
         {/* Help Section */}
-        {/* <HelpSection
+        <HelpSection
           mainImage="/pixel/1.webp"
           guideCards={guideCards}
-        /> */}
+        />
 
         {/* Products Grid */}
         <section className="py-8 md:py-12 bg-[#fcf6f6] w-full relative">

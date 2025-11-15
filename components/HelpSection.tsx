@@ -8,9 +8,9 @@ interface HelpSectionProps {
 
 export default function HelpSection({ mainImage, guideCards }: HelpSectionProps) {
   return (
-    <div className="container mx-auto px-5" id="cta">
-      <div className="my-[73px]">
-        <div className="flex gap-[15px]">
+    <div className="container mx-auto px-4 md:px-5" id="cta">
+      <div className="my-8 md:my-12 lg:my-[73px]">
+        <div className="flex flex-col lg:flex-row gap-4 lg:gap-[15px]">
         {/* Left Section - Main Image */}
         <div className="w-1/2 hidden lg:flex">
           <Image
@@ -24,13 +24,13 @@ export default function HelpSection({ mainImage, guideCards }: HelpSectionProps)
         </div>
 
         {/* Right Section - Content */}
-        <div className="lg:w-1/2 content">
+        <div className="w-full lg:w-1/2 content">
           <div>
-            <h3 className="font-extralightbold text-5xl">New to photography? Let us help!</h3>
-            <p className='pt-2 line-clamp-3 overflow-hidden text-ellipsis'>We offer a variety of written & recorded guides for all aspects of photography, ranging from equipment handling to artistic theory.</p>
+            <h3 className="font-extralightbold text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight">New to photography? Let us help!</h3>
+            <p className='pt-2 md:pt-3 line-clamp-3 overflow-hidden text-ellipsis text-sm md:text-base'>We offer a variety of written & recorded guides for all aspects of photography, ranging from equipment handling to artistic theory.</p>
             
             {/* Search Input */}
-            <div className="relative my-3">
+            <div className="relative my-4 md:my-3">
               <svg
                 stroke="currentColor"
                 fill="currentColor"
@@ -55,21 +55,21 @@ export default function HelpSection({ mainImage, guideCards }: HelpSectionProps)
           {/* Guide Cards */}
           <div className="details">
             {guideCards.map((card, index) => (
-              <div key={card.id} className={`details flex gap-4 ${index > 0 ? 'mt-[14px]' : ''}`}>
-                <div>
+              <div key={card.id} className={`details flex flex-col sm:flex-row gap-3 sm:gap-4 ${index > 0 ? 'mt-3 md:mt-[14px]' : ''}`}>
+                <div className="w-full sm:w-auto shrink-0">
                   <Image
                     src={card.image}
                     alt=""
                     width={800}
                     height={500}
-                    className="w-full md:w-[269px] h-[147px] object-cover"
+                    className="w-full sm:w-[200px] md:w-[269px] h-auto sm:h-[147px] object-cover"
                     loading="lazy"
                   />
                 </div>
                 <div className="flex flex-col justify-around">
                   <div>
-                    <h2>{card.title}</h2>
-                    <p>{card.description}</p>
+                    <h2 className="text-sm md:text-base font-semibold">{card.title}</h2>
+                    <p className="text-sm md:text-base text-gray-700">{card.description}</p>
                   </div>
                   <div className="flex items-center link gap-5">
                     <a className="underline text-[#737373] hover:text-[var(--brand-color)]" href={card.link || '/'}>
