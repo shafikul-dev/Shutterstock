@@ -7,11 +7,11 @@ interface CategoryCardsProps {
 
 export default function CategoryCards({ cards }: CategoryCardsProps) {
   return (
-    <div className="container mx-auto px-5">
-      <div className="flex justify-center my-[73px]">
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-5">
+    <div className="container mx-auto px-4 md:px-5">
+      <div className="flex justify-center my-8 md:my-12 lg:my-[73px]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-5 w-full max-w-7xl">
           {cards.map((card) => (
-            <div key={card.id} className="relative w-[400px] h-[400px]" id="card">
+            <div key={card.id} className="relative w-full aspect-square max-w-[400px] mx-auto" id="card">
               {/* Background Image */}
               <Image
                 src={card.image}
@@ -21,14 +21,14 @@ export default function CategoryCards({ cards }: CategoryCardsProps) {
               />
               
               {/* Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black" />
+              <div className="absolute inset-0 bg-linear-to-b from-transparent via-transparent to-black" />
               
               {/* Desktop Content */}
               <div className="absolute bottom-0 left-0 w-full p-4 text-white">
                 <div className="hidden md:block">
-                  <p className="text-[32px] font-[600] uppercase mb-2">{card.title}</p>
+                  <p className="text-[32px] font-semibold uppercase mb-2">{card.title}</p>
                   <div className="flex justify-between gap-3 items-center">
-                    <p className="font-[400] text-[16px]">{card.description}</p>
+                    <p className="font-normal text-[16px]">{card.description}</p>
                     <div className="icon">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -50,7 +50,7 @@ export default function CategoryCards({ cards }: CategoryCardsProps) {
               {/* Mobile Content */}
               <div className="absolute bottom-0 left-0 w-full p-4 text-white block md:hidden">
                 <div className="flex justify-between gap-3 items-center">
-                  <p className="text-[20px] font-[500] uppercase">{card.title}</p>
+                  <p className="text-[20px] font-medium uppercase">{card.title}</p>
                   <div className="icon">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"

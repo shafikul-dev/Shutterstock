@@ -9,12 +9,12 @@ export default function Footer() {
 
   return (
     <footer className="bg-[#2a2a2a] text-white">
-      <div className="container mx-auto px-6 py-12">
+      <div className="container mx-auto px-4 md:px-6 py-8 md:py-12">
         {/* Top Section: Map + Visit Info | Logo | Newsletter */}
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-12 mb-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-8 lg:gap-12 mb-8 lg:mb-12 items-start">
           {/* Left: Map + Visit Info */}
-          <div className="flex gap-4">
-            <div className="shrink-0 w-48 h-32 bg-gray-800 rounded overflow-hidden">
+          <div className="flex flex-col sm:flex-row gap-4">
+            <div className="shrink-0 w-full sm:w-48 h-32 bg-gray-800 rounded overflow-hidden">
               <Image
                 src="/pixel/map.webp"
                 alt="Location Map"
@@ -23,7 +23,7 @@ export default function Footer() {
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="flex flex-col justify-start pt-2">
+            <div className="flex flex-col justify-start pt-0 sm:pt-2">
               <h3 className="text-lg font-normal mb-3">Come visit us!</h3>
               <div className="flex items-start gap-2 mb-1">
                 <svg className="w-4 h-4 text-[#ff0055] mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20">
@@ -47,13 +47,13 @@ export default function Footer() {
           </div>
 
           {/* Center: PIXEL Logo */}
-          <div className="flex items-start justify-center pt-8">
-            <h2 className="text-5xl font-bold text-white tracking-[0.2em]">PIXEL</h2>
+          <div className="flex items-start justify-center pt-4 lg:pt-8 order-first lg:order-0">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white tracking-[0.2em]">PIXEL</h2>
           </div>
 
           {/* Right: Newsletter */}
           <div>
-            <h3 className="text-xl font-normal mb-4">
+            <h3 className="text-lg md:text-xl font-normal mb-3 md:mb-4">
               Join our newsletter for exclusive offers!
             </h3>
             <form
@@ -63,7 +63,7 @@ export default function Footer() {
               }}
               className="space-y-3"
             >
-              <div className="flex gap-2">
+              <div className="flex flex-col sm:flex-row gap-2">
                 <input
                   type="text"
                   value={name}
@@ -114,8 +114,8 @@ export default function Footer() {
         </div>
 
         {/* Middle Section: Shop, Used, About, Contact Info */}
-        <div className="border-t border-gray-700 pt-8 mb-8">
-          <div className="flex flex-wrap lg:flex-nowrap justify-between items-start gap-8 lg:gap-12">
+        <div className="border-t border-gray-700 pt-6 md:pt-8 mb-6 md:mb-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:flex lg:flex-nowrap lg:justify-between items-start gap-6 md:gap-8 lg:gap-12">
             {/* Shop Links */}
             <div>
               <h3 className="text-base font-bold mb-4">Shop</h3>
@@ -188,27 +188,27 @@ export default function Footer() {
             </div>
 
             {/* Contact Information */}
-            <div className="shrink-0">
+            <div className="shrink-0 col-span-2 md:col-span-2 lg:col-span-1">
               <h3 className="text-base font-bold mb-4">Contact Information</h3>
               <div className="space-y-3 text-sm">
                 <div className="flex items-center gap-2 text-[#ff0055]">
                   <svg className="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
                   </svg>
-                  <span>+972 123-456-78</span>
+                  <span className="break-all">+972 123-456-78</span>
                 </div>
                 <div className="flex items-center gap-2 text-[#ff0055]">
                   <svg className="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
                     <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
                   </svg>
-                  <span>name@camera.com</span>
+                  <span className="break-all">name@camera.com</span>
                 </div>
-                <div className="flex items-center gap-2 mt-4 pt-2">
-                  <button className="px-5 py-1.5 bg-[#ff0055] text-white text-sm font-semibold rounded hover:bg-[#e6004d] transition-colors">
+                <div className="flex items-center gap-2 mt-4 pt-2 flex-wrap">
+                  <button className="px-4 md:px-5 py-1.5 bg-[#ff0055] text-white text-sm font-semibold rounded hover:bg-[#e6004d] transition-colors">
                     USD $
                   </button>
-                  <button className="px-5 py-1.5 bg-transparent text-gray-400 text-sm font-semibold rounded hover:text-white transition-colors border border-gray-600">
+                  <button className="px-4 md:px-5 py-1.5 bg-transparent text-gray-400 text-sm font-semibold rounded hover:text-white transition-colors border border-gray-600">
                     EUR €
                   </button>
                 </div>
@@ -218,14 +218,14 @@ export default function Footer() {
         </div>
 
         {/* Bottom Section: Copyright, Payment Icons, Links */}
-        <div className=" pt-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <p className="text-gray-400 text-[16px]">
+        <div className="border-t border-gray-700 pt-4 md:pt-6">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 md:gap-6">
+            <p className="text-gray-400 text-sm md:text-base text-center md:text-left">
               © 2025 PIXEL. All Rights Reserved
             </p>
             
             {/* Payment Icons */}
-            <div className="flex items-center gap-2 flex-wrap">
+            <div className="flex items-center justify-center gap-2 flex-wrap">
               <div className="w-12 h-8 bg-white rounded flex items-center justify-center">
                 <span className="text-[10px] font-bold text-blue-600">AMEX</span>
               </div>
@@ -246,17 +246,17 @@ export default function Footer() {
               </div>
             </div>
             
-            <div className="flex gap-6 text-sm text-gray-400 flex-wrap justify-center">
-              <a href="#" className="hover:text-white transition-colors">
+            <div className="flex gap-3 md:gap-6 text-xs md:text-sm text-gray-400 flex-wrap justify-center">
+              <a href="#" className="hover:text-white transition-colors whitespace-nowrap">
                 Return Policy
               </a>
-              <a href="#" className="hover:text-white transition-colors">
+              <a href="#" className="hover:text-white transition-colors whitespace-nowrap">
                 Accessibility
               </a>
-              <a href="#" className="hover:text-white transition-colors">
+              <a href="#" className="hover:text-white transition-colors whitespace-nowrap">
                 Terms of Use
               </a>
-              <a href="#" className="hover:text-white transition-colors">
+              <a href="#" className="hover:text-white transition-colors whitespace-nowrap">
                 Privacy Policy
               </a>
             </div>

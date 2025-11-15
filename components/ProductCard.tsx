@@ -13,7 +13,7 @@ export default function ProductCard({ product }: ProductCardProps) {
   const [quantity, setQuantity] = useState(product.quantity || 1);
 
   return (
-    <div className="group relative flex flex-col w-[256px]  overflow-hidden rounded-xl  ">
+    <div className="group relative flex flex-col w-full max-w-[256px] overflow-hidden rounded-xl">
       {/* Top Icons */}
       <div className="flex items-center justify-end gap-3 mb-2">
         <button className="text-gray-600 hover:text-gray-900 transition-colors">
@@ -29,7 +29,7 @@ export default function ProductCard({ product }: ProductCardProps) {
       </div>
 
       {/* Product Image */}
-      <div className="relative mb-3 w-[256px] h-[210px] overflow-hidden  shrink-0 mx-auto">
+      <div className="relative mb-3 w-full h-[210px] overflow-hidden shrink-0 mx-auto">
         {product.image ? (
           <Image
             src={product.image}

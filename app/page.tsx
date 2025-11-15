@@ -1,20 +1,17 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import FeaturedSection from '@/components/FeaturedSection';
-import TopSellers from '@/components/TopSellers';
 import ProductCard from '@/components/ProductCard';
 import ImageCarousel from '@/components/ImageCarousel';
 import CategoryCards from '@/components/CategoryCards';
-import HelpSection from '@/components/HelpSection';
 import UsedGearSection from '@/components/UsedGearSection';
-import { products, promotionalBanners, carouselSlides, categoryCards, guideCards, sellers } from '@/lib/data';
+import { products, carouselSlides, categoryCards, sellers } from '@/lib/data';
 
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
       
-      <main className="flex-grow">
+      <main className="grow">
         {/* Image Carousel */}
         <ImageCarousel slides={carouselSlides} autoPlay={true} autoPlayInterval={5000} />
 
@@ -28,9 +25,9 @@ export default function Home() {
         /> */}
 
         {/* Products Grid */}
-        <section className="py-12 bg-[#fcf6f6] w-full relative">
-          <div className="w-full mx-auto px-4">
-            <div className="flex flex-wrap justify-center gap-[38px] items-start">
+        <section className="py-8 md:py-12 bg-[#fcf6f6] w-full relative">
+          <div className="container mx-auto px-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8 lg:gap-[38px] justify-items-center">
               {products.map((product) => (
                 <ProductCard key={product.id} product={product} />
               ))}

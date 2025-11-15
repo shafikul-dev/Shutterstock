@@ -10,15 +10,15 @@ export default function UsedGearSection({ sellers }: UsedGearSectionProps) {
 
   return (
     <section className="bg-white mx-auto">
-      <div className=" mx-auto px-4 py-12 lg:py-16 h-full">
+      <div className="container mx-auto px-4 py-8 md:py-12 lg:py-16 h-full">
         {/* Heading */}
-        <h2 className="text-[32px] md:text-[40px] font-bold tracking-tight mb-6">
+        <h2 className="text-2xl md:text-[32px] lg:text-[40px] font-bold tracking-tight mb-4 md:mb-6">
           Featured savings
         </h2>
 
-        <div className="grid gap-10 items-start lg:grid-cols-[35%_60%]">
+        <div className="grid gap-6 md:gap-8 lg:gap-10 items-start lg:grid-cols-[35%_60%]">
           {/* Left image */}
-          <div className="relative w-full  h-full aspect-[4/3]">
+          <div className="relative w-full h-full aspect-4/3">
             <Image
               src="/pixel/12.webp"
               alt="Used gear layout"
@@ -29,23 +29,23 @@ export default function UsedGearSection({ sellers }: UsedGearSectionProps) {
           </div>
 
           {/* Right content */}
-          <div className="flex flex-col ">
-            <h3 className="text-[28px] md:text-[36px] font-bold leading-tight">
+          <div className="flex flex-col">
+            <h3 className="text-xl md:text-[28px] lg:text-[36px] font-bold leading-tight">
               Turn used gear into new possibilities
             </h3>
-            <p className="mt-3 text-sm md:text-base text-gray-800 max-w-xl">
+            <p className="mt-2 md:mt-3 text-sm md:text-base text-gray-800 max-w-xl">
               We offer a reliable platform for buying and selling used photography gear.
               Whether you&apos;re a beginner looking for affordable equipment or a
               professional photographer in search of high-end gear at a discounted price,
               we&apos;ve got you covered.
             </p>
 
-            <h4 className="mt-6 text-lg font-semibold">
+            <h4 className="mt-4 md:mt-6 text-base md:text-lg font-semibold">
               Top sellers this month
             </h4>
 
             {/* Sellers row */}
-            <div className="mt-4 grid gap-4 md:grid-cols-3 ">
+            <div className="mt-3 md:mt-4 grid gap-3 md:gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {topSellers.map((seller) => (
                 <div
                   key={seller.id}
@@ -53,7 +53,7 @@ export default function UsedGearSection({ sellers }: UsedGearSectionProps) {
                 >
                   <div className="flex gap-3 items-start">
                     {seller.image && (
-                      <div className="relative w-[72px] h-[72px] rounded-md overflow-hidden flex-shrink-0">
+                      <div className="relative w-[72px] h-[72px] rounded-md overflow-hidden shrink-0">
                         <Image
                           src={seller.image}
                           alt={seller.name}
@@ -87,16 +87,16 @@ export default function UsedGearSection({ sellers }: UsedGearSectionProps) {
             </div>
 
             {/* Buttons */}
-            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-4 md:mt-6 flex flex-col sm:flex-row gap-3 sm:gap-3">
               <button
                 type="button"
-                className="inline-flex items-center justify-center px-10 py-2.5 text-sm font-semibold tracking-wide text-white bg-[#F33838] hover:bg-[#e02c2c] transition-colors"
+                className="inline-flex items-center justify-center px-8 md:px-10 py-2.5 text-sm font-semibold tracking-wide text-white bg-[#F33838] hover:bg-[#e02c2c] transition-colors"
               >
                 BUY
               </button>
               <button
                 type="button"
-                className="inline-flex items-center justify-center px-10 py-2.5 text-sm font-semibold tracking-wide border border-gray-900 text-gray-900 bg-white hover:bg-gray-50 transition-colors"
+                className="inline-flex items-center justify-center px-8 md:px-10 py-2.5 text-sm font-semibold tracking-wide border border-gray-900 text-gray-900 bg-white hover:bg-gray-50 transition-colors"
               >
                 SELL
               </button>

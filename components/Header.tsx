@@ -11,11 +11,11 @@ export default function Header() {
   return (
     <header className='bg-[#1a1a1b]'>
  <div className="relative z-50 bg-[#1a1a1b] h-auto mx-auto container">
-      <div className="w-full ">
+      <div className="w-full">
         {/* Top bar with logo and icons */}
-        <div className="flex items-center justify-between p-[26px]">
+        <div className="flex items-center justify-between p-4 md:p-6 lg:p-[26px]">
           {/* Logo */}
-          <div className="relative h-[30px] w-[116px]">
+          <div className="relative h-[24px] w-[90px] md:h-[30px] md:w-[116px]">
             <Image
               src="/pixel/logo.svg"
               alt="PIXEL"
@@ -26,7 +26,7 @@ export default function Header() {
           </div>
 
           {/* Icons on the right */}
-          <div className="flex items-center gap-[31px]">
+          <div className="flex items-center gap-4 md:gap-6 lg:gap-[31px]">
             {/* User/Login Icon */}
             <button className="hover:opacity-80 transition-opacity" aria-label="Login">
               <svg
@@ -174,12 +174,12 @@ export default function Header() {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <nav className="md:hidden bg-gray-800 pb-4 px-6 space-y-2">
+          <nav className="md:hidden bg-gray-800 pb-4 px-4 space-y-1">
             {navigationItems.map((item) => (
               <a
                 key={item}
                 href="#"
-                className="block py-2 text-sm font-medium text-white uppercase hover:text-gray-300"
+                className="block py-3 text-sm font-medium text-white uppercase hover:text-gray-300 hover:bg-gray-700 px-3 rounded transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item}
