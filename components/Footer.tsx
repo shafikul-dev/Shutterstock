@@ -115,24 +115,24 @@ export default function Footer() {
 
         {/* Middle Section: Shop, Used, About, Contact Info */}
         <div className="border-t border-gray-700 pt-8 mb-8">
-          <div className="grid grid-cols-2 md:grid-cols-6 gap-8">
-            {/* Shop - 3 columns */}
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-[1fr_1fr_1fr_2fr] gap-8 lg:gap-16">
+            {/* Shop Links */}
             <div>
-              <h3 className="text-base font-bold mb-3">Shop</h3>
+              <h3 className="text-base font-bold mb-4">Shop</h3>
               <ul className="space-y-2 text-gray-400 text-sm">
                 <li>
                   <a href="#" className="hover:text-white transition-colors">
                     Cameras
                   </a>
                 </li>
-              </ul>
-            </div>
-            <div className="md:-ml-8">
-              <h3 className="text-base font-bold mb-3 invisible">Shop</h3>
-              <ul className="space-y-2 text-gray-400 text-sm">
                 <li>
                   <a href="#" className="hover:text-white transition-colors">
                     Cameras
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-white transition-colors">
+                    Lenses
                   </a>
                 </li>
                 <li>
@@ -147,20 +147,10 @@ export default function Footer() {
                 </li>
               </ul>
             </div>
-            <div className="md:-ml-8">
-              <h3 className="text-base font-bold mb-3 invisible">Shop</h3>
-              <ul className="space-y-2 text-gray-400 text-sm">
-                <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    Lenses
-                  </a>
-                </li>
-              </ul>
-            </div>
 
             {/* Used Links */}
             <div>
-              <h3 className="text-base font-bold mb-3">Used</h3>
+              <h3 className="text-base font-bold mb-4">Used</h3>
               <ul className="space-y-2 text-gray-400 text-sm">
                 <li>
                   <a href="#" className="hover:text-white transition-colors">
@@ -182,7 +172,7 @@ export default function Footer() {
 
             {/* About Links */}
             <div>
-              <h3 className="text-base font-bold mb-3">About</h3>
+              <h3 className="text-base font-bold mb-4">About</h3>
               <ul className="space-y-2 text-gray-400 text-sm">
                 <li>
                   <a href="#" className="hover:text-white transition-colors">
@@ -203,27 +193,27 @@ export default function Footer() {
             </div>
 
             {/* Contact Information */}
-            <div>
-              <h3 className="text-base font-bold mb-3">Contact Information</h3>
-              <div className="space-y-2 text-sm">
+            <div className="col-span-2 md:col-span-1">
+              <h3 className="text-base font-bold mb-4">Contact Information</h3>
+              <div className="space-y-3 text-sm">
                 <div className="flex items-center gap-2 text-[#ff0055]">
-                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                  <svg className="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
                   </svg>
                   <span>+972 123-456-78</span>
                 </div>
                 <div className="flex items-center gap-2 text-[#ff0055]">
-                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                  <svg className="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
                     <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
                   </svg>
                   <span>name@camera.com</span>
                 </div>
-                <div className="flex items-center gap-2 mt-3">
-                  <button className="px-4 py-1 bg-[#ff0055] text-white text-xs font-medium rounded hover:bg-[#e6004d] transition-colors">
+                <div className="flex items-center gap-2 mt-4 pt-2">
+                  <button className="px-5 py-1.5 bg-[#ff0055] text-white text-sm font-semibold rounded hover:bg-[#e6004d] transition-colors">
                     USD $
                   </button>
-                  <button className="px-4 py-1 bg-transparent text-gray-400 text-xs font-medium rounded hover:text-white transition-colors border border-gray-600">
+                  <button className="px-5 py-1.5 bg-transparent text-gray-400 text-sm font-semibold rounded hover:text-white transition-colors border border-gray-600">
                     EUR €
                   </button>
                 </div>
