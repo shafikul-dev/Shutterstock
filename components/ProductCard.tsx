@@ -13,7 +13,7 @@ export default function ProductCard({ product }: ProductCardProps) {
   const [quantity, setQuantity] = useState(product.quantity || 1);
 
   return (
-    <div className="group relative flex flex-col w-[256px] min-h-[434px] overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition-shadow hover:shadow-md">
+    <div className="group relative flex flex-col w-[256px]  overflow-hidden rounded-xl  ">
       {/* Top Icons */}
       <div className="flex items-center justify-end gap-3 mb-2">
         <button className="text-gray-600 hover:text-gray-900 transition-colors">
@@ -29,7 +29,7 @@ export default function ProductCard({ product }: ProductCardProps) {
       </div>
 
       {/* Product Image */}
-      <div className="relative mb-4 w-[256px] h-[256px] overflow-hidden bg-gray-100 shrink-0 mx-auto">
+      <div className="relative mb-3 w-[256px] h-[210px] overflow-hidden  shrink-0 mx-auto">
         {product.image ? (
           <Image
             src={product.image}
@@ -47,9 +47,9 @@ export default function ProductCard({ product }: ProductCardProps) {
       {/* Product Details */}
       <div className="space-y-3 grow flex flex-col px-2 pb-4">
         {/* Product Name */}
-        <h3 className="text-2xl font-bold text-gray-900">{product.name}</h3>
+        <h3 className="text-[20px] text-gray-900 whitespace-nowrap">{product.name}</h3>
         
-      <div className='flex justify-between'>
+      <div className='flex justify-between text-[14px] text-gray-300'>
           {/* Brand */}
           <p className="text-base text-gray-900">{product.brand}</p>
         
@@ -120,7 +120,7 @@ export default function ProductCard({ product }: ProductCardProps) {
 
 
         {/* Timer + Price in one row */}
-        <div className=" flex items-end justify-between mt-[-30px] ">
+         <div className="flex items-end justify-between mt-2">
         {product.countdown && (
           <div className="flex items-center gap-2">
             <svg className="w-5 h-5 text-[#F33838]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -133,12 +133,12 @@ export default function ProductCard({ product }: ProductCardProps) {
 
         {/* Price */}
         <div className="pt-2 text-right">
-          {product.originalPrice && (
+          {/* {product.originalPrice && (
             <div className="text-lg text-gray-500 line-through mb-1">
               $ {product.originalPrice.toLocaleString()}
             </div>
-          )}
-          <div className="text-3xl font-bold text-gray-900">
+          )} */}
+          <div className="text-[16px]  text-gray-900">
             $ {product.price.toLocaleString()}
           </div>
         </div>
